@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/keyline_0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/keyline_0"
+    app:cardBackgroundColor="@color/cardview_light_background">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/catcher_avatar_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars"
+            android:nextFocusLeft="@id/catcher_username_tv"
+            android:nextFocusDown="@id/car_photo_iv"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/catched_avatar_iv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars"
+            android:nextFocusLeft="@id/catched_avatar_iv"
+            android:nextFocusDown="@id/car_photo_iv"/>
+
+        <TextView
+            android:id="@+id/catcher_username_tv"
+            style="@style/stadard_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/catched_avatar_iv"
+            app:layout_constraintStart_toEndOf="@+id/catcher_avatar_iv"
+            app:layout_constraintTop_toTopOf="@+id/catcher_avatar_iv"
+            tools:text="CATCHER"
+            android:nextFocusDown="@id/catched_username_tv"
+            android:nextFocusRight="@id/catched_avatar_iv"
+            android:nextFocusLeft="@id/catcher_avatar_iv"/>
+
+        <TextView
+            android:id="@+id/catched_username_tv"
+            style="@style/stadard_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/catched_avatar_iv"
+            app:layout_constraintStart_toEndOf="@+id/catcher_avatar_iv"
+            app:layout_constraintTop_toBottomOf="@+id/catcher_username_tv"
+            tools:text="CATCHED"
+            android:nextFocusUp="@id/catcher_username_tv"
+            android:nextFocusLeft="@id/catcher_avatar_iv"
+            android:nextFocusRight="@id/catched_avatar_iv"
+            android:nextFocusDown="@id/car_photo_iv"/>
+
+        <ImageView
+            android:id="@+id/car_photo_iv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerInside"
+            android:contentDescription="@string/car_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/catched_username_tv"
+            tools:src="@tools:sample/avatars"
+            android:nextFocusUp="@id/catched_username_tv"
+            android:nextFocusDown="@id/like_iv"/>
+
+        <Button
+            android:id="@+id/comment_iv"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/like_iv"
+            app:layout_constraintTop_toTopOf="@+id/car_photo_likes_tv"
+            tools:background="@drawable/ic_outline_mode_comment_24px"
+            android:nextFocusLeft="@id/like_iv"
+            android:nextFocusDown="@id/car_photo_comments_tv"
+            android:nextFocusUp="@id/car_photo_iv"/>
+
+        <ToggleButton
+            android:id="@+id/like_iv"
+            android:textOn=""
+            android:textOff=""
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@+id/car_photo_likes_tv"
+            app:layout_constraintTop_toTopOf="@+id/car_photo_likes_tv"
+            android:checked="false"
+            android:background="@drawable/like_selector"
+            android:nextFocusDown="@id/car_photo_comments_tv"
+            android:nextFocusUp="@id/car_photo_iv"
+            android:nextFocusLeft="@id/comment_iv"
+            />
+
+        <TextView
+            android:id="@+id/car_photo_likes_tv"
+            style="@style/stadard_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/car_photo_iv"
+            tools:text="45" />
+
+        <TextView
+            android:id="@+id/car_photo_title"
+            style="@style/stadard_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/car_photo_likes_tv"
+            tools:text="This is description for photo" />
+
+        <TextView
+            android:id="@+id/car_photo_comments_tv"
+            style="@style/stadard_text_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="@dimen/keyline_1"
+            android:paddingBottom="@dimen/keyline_1"
+            android:text="@string/show_comments"
+            android:textColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="@+id/car_photo_title"
+            app:layout_constraintTop_toBottomOf="@+id/car_photo_title"
+            android:nextFocusUp="@id/comment_iv"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

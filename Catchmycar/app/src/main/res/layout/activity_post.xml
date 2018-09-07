@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/catched_car_post_iv"
+        android:layout_gravity="center"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/black"
+        android:contentDescription="@string/car_image_description"
+        android:padding="1dp"
+        tools:src="@tools:sample/avatars"
+        android:nextFocusDown="@id/platenum_post_et"/>
+
+    <EditText
+        android:id="@+id/platenum_post_et"
+        style="@style/stadard_text_style"
+        android:layout_gravity="start"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_margin="@dimen/keyline_1"
+        android:layout_height="wrap_content"
+        android:hint="@string/car_plate_number_title"
+        android:inputType="textCapCharacters"
+        android:nextFocusUp="@id/catched_car_post_iv"
+        android:nextFocusDown="@id/comment_post_et"/>
+
+    <EditText
+        android:id="@+id/comment_post_et"
+        style="@style/stadard_text_style"
+        android:layout_gravity="start"
+        android:layout_width="match_parent"
+        android:lines="2"
+        android:minLines="2"
+        android:layout_margin="@dimen/keyline_1"
+        android:layout_height="wrap_content"
+        android:hint="@string/car_comment_post_title"
+        android:imeOptions="actionDone"
+        android:inputType="textImeMultiLine"
+        android:nextFocusUp="@id/platenum_post_et"
+        android:nextFocusDown="@id/post_carched_btn"/>
+
+    <Button
+        android:id="@+id/post_carched_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@color/colorAccent"
+        android:drawableStart="@drawable/ic_baseline_directions_car_24px"
+        android:padding="@dimen/keyline_1"
+        android:text="@string/post_catched_car"
+        android:textColor="@color/colorOnAccent"
+        android:nextFocusUp="@id/comment_post_et"/>
+
+
+</LinearLayout>

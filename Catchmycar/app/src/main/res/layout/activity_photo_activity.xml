@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/photo_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:title="@string/car_plate_number_title"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/process_photo_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:cropScaleType="fitCenter"
+        app:cropShowCropOverlay="true"
+        android:src="@color/colorPrimaryDark"
+        app:cropAspectRatioX="1"
+        app:cropAspectRatioY="1" />
+
+        <ProgressBar
+            android:id="@+id/photo_activity_pb"
+            android:visibility="gone"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout >

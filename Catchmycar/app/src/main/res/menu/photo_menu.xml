@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/post_mi"
+        android:title="@string/post_photo"
+        app:showAsAction="always"
+        android:orderInCategory="99"/>
+    <item android:id="@+id/geodata_mi"
+        android:title="@string/geodata_sw_title"
+        app:actionLayout="@layout/geodata_toggle"
+        app:showAsAction="always"
+        android:orderInCategory="2"/>
+    <item android:id="@+id/timedate_mi"
+        android:title="@string/timedata_sw_title"
+        app:actionLayout="@layout/timedate_toogle"
+        app:showAsAction="always"
+        android:orderInCategory="3"/>
+    <item android:id="@+id/blackwhite_mi"
+        android:title="@string/bw_sw_title"
+        app:actionLayout="@layout/blackwhite_toogle"
+        app:showAsAction="always"
+        android:orderInCategory="4"/>
+</menu>

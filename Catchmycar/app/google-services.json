@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "813299680947",
+    "firebase_url": "https://catch-my-car.firebaseio.com",
+    "project_id": "catch-my-car",
+    "storage_bucket": "catch-my-car.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813299680947:android:0075e814f7f75fa4",
+        "android_client_info": {
+          "package_name": "com.tuesday_apps.catchmycar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813299680947-9p44p8ho4gg54b0ede7bh5po9mgclm6j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tuesday_apps.catchmycar",
+            "certificate_hash": "888d584dfc55a2b0aa2abcdb9efc1409559fdedb"
+          }
+        },
+        {
+          "client_id": "813299680947-bqg4omh7d5ds7avch3l2r4cclbcanqcq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN0PltHFe7PYMtIaPe-hyAJFs5Zco4B5I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813299680947-bqg4omh7d5ds7avch3l2r4cclbcanqcq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

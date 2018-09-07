@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">Catch my car</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_user_profile">Profile</string>
+
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">API_ID</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">PROTOCOL_SCHEME</string>
+
+    <string name="geodata">Geo data</string>
+    <string name="geodata_sw_title">Geo data</string>
+    <string name="timedata_sw_title">Time and date</string>
+    <string name="bw_sw_title">Black/white</string>
+    <string name="camera_not_found">Camera not found</string>
+    <string name="file_create_error">Couldn\'t create file</string>
+    <string name="permission_denied">Application perrmission denied</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="post_photo">Post</string>
+    <string name="not_saved">Couldn\'t save file</string>
+    <string name="cancel">Cancel</string>
+    <string name="approve">Post!</string>
+    <string name="preview">Preview</string>
+    <string name="database_ref">debug_database</string>
+    <string name="users_ref">users</string>
+    <string name="username_rdb">username</string>
+    <string name="search_index_ref">searchIndex</string>
+    <string name="friends_count_title">friends: </string>
+    <string name="car_name_title">Car name</string>
+    <string name="car_plate_number_title">Plate number</string>
+    <string name="add_car_title">Add car</string>
+    <string name="car_photos_count_title">Catched:</string>
+    <string name="car_image_description">It is a catched car image</string>
+    <string name="show_comments">Show all comments...</string>
+    <string name="cars_ref">cars</string>
+    <string name="friendship_ref">friendships</string>
+    <string name="user_loading_progress">Loading user profile</string>
+    <string name="user_loading_progress_message">Please wait...</string>
+    <string name="carprofile_ref">car_profile/</string>
+    <string name="user_cars_ref">cars</string>
+    <string name="search_platenum_ref">platenums</string>
+    <string name="user_retrieving_error">user not found. Please try log out and log in again</string>
+    <string name="car_add_succesfull">Car successfully added</string>
+    <string name="car_add_error">Please, try to add car again</string>
+    <string name="post_catched_car">Post</string>
+    <string name="car_comment_post_title">Enter comment...</string>
+    <string name="likeError">Please try to like again</string>
+    <string name="send_button_label">SEND</string>
+    <string name="enter_comment_here">Enter comment here...</string>
+    <string name="avatar_loading_title">Uploading image</string>
+    <string name="avatar_loading_message">Please wait..</string>
+    <string name="catched_you">catched you</string>
+    <string name="action_sign_out">Log out</string>
+    <string name="catch_my_car">Catch my car</string>
+    <string name="username_error">Couldn\'t get username from server</string>
+    <string name="internet_conn_err">Database is not available</string>
+    <string name="refresh_fragment">REFRESH</string>
+    <string name="no_photos_found">No photos for now..</string>
+    <string name="appwidget_text">catch my car widget</string>
+    <string name="add_widget">Add widget</string>
+    <string name="no_new_photos_yet">No new photos for you..</string>
+    <string name="car_photo_in_widget">Car photo in the widget</string>
+    <string name="unable_to_create">unable to create temp image file.</string>
+    <string name="file_not_created">file not created for temp image</string>
+    <string name="user_read_error">Unable to read and write user information to database</string>
+    <string name="google_services_error">Google Play Services check error</string>
+    <string name="unable_to_upload">unable to upload photo to storage</string>
+    <string name="auth_err">Authorization error</string>
+    <string name="notification_man_error">Couldn\'t obtain notification manager</string>
+    <string name="car_not_found">Car not found</string>
+    <string name="activity_must_impl_nav">activity must implement fragment navigation interface</string>
+    <string name="user_avatar_load_error">unable to upload user photo to database</string>
+    <string name="comment_send_error">Error while sending the comment</string>
+    <string name="no_internet">Please connect to the Internet</string>
+</resources>
