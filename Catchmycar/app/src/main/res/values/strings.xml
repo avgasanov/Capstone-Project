@@ -75,4 +75,7 @@
     <string name="user_avatar_load_error">unable to upload user photo to database</string>
     <string name="comment_send_error">Error while sending the comment</string>
     <string name="no_internet">Please connect to the Internet</string>
+    <string name="preview_car_desc">preview image of the car that you would like to post</string>
+    <string name="add_car_desc">Avatar of the car that you would like to register</string>
+    <string name="press_here">Press here to choose image for car that you would like to add</string>
 </resources>

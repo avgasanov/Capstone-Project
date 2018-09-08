@@ -18,6 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/add_car_desc"
         tools:src="@tools:sample/avatars" />
 
     <ImageView
@@ -28,6 +29,7 @@
         android:src="@drawable/ic_baseline_add_a_photo_24px"
         app:layout_constraintBottom_toBottomOf="@+id/add_car_iv"
         app:layout_constraintStart_toEndOf="@+id/add_car_iv"
+        android:contentDescription="@string/press_here"
         android:nextFocusDown="@id/carname_tv"/>
 
     <EditText

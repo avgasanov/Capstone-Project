@@ -4,7 +4,8 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
 
-
+//This is for demonstrational purposes. To meet project requirements i've also created
+//async task in utils.Utils which draws text to bitmap
 public class WidgetIntentService extends IntentService {
 
     private static final String ACTION_PHOTO_TO_WIDGET = "action-photo-to-widget";

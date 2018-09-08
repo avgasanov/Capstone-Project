@@ -417,7 +417,14 @@ public class MainActivity extends AppCompatActivity implements
                             photo, photoHeight,
                             photoWidth);
 
-            startActivity(postIntent);
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                Bundle bundle = ActivityOptions
+                        .makeSceneTransitionAnimation(this)
+                        .toBundle();
+                startActivity(postIntent, bundle);
+            } else {
+                startActivity(postIntent);
+            };
         }
     }
 

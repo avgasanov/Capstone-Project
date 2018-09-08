@@ -139,10 +139,6 @@ public class PhotoActivity extends AppCompatActivity implements
 
     private void onSaveInstanceStateCommon(Bundle outState) {
         outState.putString(INSTANCE_LOCATION, mLocation);
-        Log.v("QZADA", "saving instance state");
-        if(originalImage == null) {
-            Log.v("QZADA", "saving originalImage is null");
-        }
         outState.putParcelable(INSTANCE_ORIGINAL_IMAGE, originalImage);
         outState.putParcelable(INSTANCE_PROCESSED_IMAGE, processedImage);
         outState.putString(INSTANCE_PHOTO_PATH, mPhotoPath);

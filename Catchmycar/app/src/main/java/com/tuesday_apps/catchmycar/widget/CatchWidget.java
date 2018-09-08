@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.tuesday_apps.catchmycar.FirebaseUtils.FirebaseHelper;
 import com.tuesday_apps.catchmycar.GlideApp;
 import com.tuesday_apps.catchmycar.R;
-
+import com.tuesday_apps.catchmycar.car.CarPhotos;
 
 
 import java.util.Map;
@@ -40,25 +40,14 @@ public class CatchWidget extends AppWidgetProvider {
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.catch_widget);
 
-        setPhoto(views, context);
 
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        if (firebaseUser == null) {
-            Log.v("ANACODE", "no user");
-            views
-                    .setTextViewText(R.id.appwidget_text,
-                            context.getString(R.string.no_photos_found));
-        } else {
             DatabaseReference databaseReference =
                     FirebaseDatabase
                             .getInstance()
                             .getReference(context.getString(R.string.database_ref));
 
             databaseReference
-                    .child(FirebaseHelper.SEARCH_INDEX_REFERENCE)
-                    .child(FirebaseHelper.SEARCH_USER_PHOTOS_REFERENCE)
-                    .child(firebaseUser.getUid())
+                    .child(FirebaseHelper.CAR_PHOTOS_REFERENCE)
                     .orderByKey()
                     .limitToLast(1)
                     .addListenerForSingleValueEvent(
@@ -66,7 +55,7 @@ public class CatchWidget extends AppWidgetProvider {
                                     context,
                                     views,
                                     appWidgetId));
-        }
+
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
@@ -80,65 +69,32 @@ public class CatchWidget extends AppWidgetProvider {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     try {
-                        Map<String, Long> photo =
-                                (Map<String, Long>) dataSnapshot.getValue();
-                        String photoKey = (String) photo.keySet().toArray()[0];
-                        databaseReference
-                                .child(FirebaseHelper.CAR_PHOTOS_REFERENCE)
-                                .child(photoKey)
-                                .child(FirebaseHelper.PHOTO_URL_IN_CARPHOTOS_REFERENCE)
-                                .addListenerForSingleValueEvent(
-                                        getPhotoUrlEventListener(views, context, appWidgetId));
-
+                        CarPhotos carPhoto = null;
+                        for (DataSnapshot snap : dataSnapshot.getChildren()) {
+                            carPhoto = snap.getValue(CarPhotos.class);
+                        }
+                        if (carPhoto != null && carPhoto.getPhotoUrl() != null) {
+                             loadPhoto(carPhoto.getPhotoUrl(), context, views, appWidgetId);
+                        }
+                        setPhoto(views, context);
                     } catch (Exception e) {
                         setNoPhoto(views, context);
-                        Log.v("ANACODE", "error caught");
                     }
                 } else {
                     setNoPhoto(views, context);
-                    Log.v("ANACODE", "snap not exist getPhotoUrlGetter");
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 setNoPhoto(views, context);
-                Log.v("ANACODE", "cancelled getPhotoUrlGetter");
             }
         };
     }
 
-    private static ValueEventListener getPhotoUrlEventListener(RemoteViews views,
-                                                               Context context,
-                                                               int appWidgetId) {
-        return new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    String photoUrl = (String) dataSnapshot.getValue();
-                    if (photoUrl != null) {
-                        loadPhoto(photoUrl, context, views, appWidgetId);
-                    } else {
-                        Log.v("ANACODE", "photo url is empty");
-                        setNoPhoto(views, context);
-                    }
-                }
-                else {
-                    Log.v("ANACODE", "photo url snap not exists");
-                    setNoPhoto(views, context);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.v("ANACODE", "photo url connection error");
-                setNoPhoto(views, context);
-            }
-        };
-    }
 
     private static void loadPhoto(String photoUrl, Context context, RemoteViews views, int appWidgetId) {
-        Log.v("ANACODE", "glide loads photo");
+
 
         AppWidgetTarget appWidgetTarget =
                 new AppWidgetTarget(context, R.id.appwidget_iv, views, appWidgetId) {
@@ -173,7 +129,6 @@ public class CatchWidget extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
-        // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
@@ -181,12 +136,12 @@ public class CatchWidget extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
-        // Enter relevant functionality for when the first widget is created
+
     }
 
     @Override
     public void onDisabled(Context context) {
-        // Enter relevant functionality for when the last widget is disabled
+
     }
 
 
