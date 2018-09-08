@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.tuesday_apps.catchmycar.FirebaseUtils.FirebaseHelper;
+import com.tuesday_apps.catchmycar.GlideApp;
 import com.tuesday_apps.catchmycar.R;
 import com.tuesday_apps.catchmycar.car.CarPhotoAdapterItem;
 import com.tuesday_apps.catchmycar.car.CarPhotos;
@@ -171,7 +172,11 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
         String catcherAvatar = currentCar.getCatcherAvatar();
 
         holder.mCatcherUsernameTextView.setText(catcherUsername);
-        Glide.with(mContext).load(catcherAvatar).into(holder.mCatcherAvatarImageView);
+        GlideApp
+                .with(mContext)
+                .load(catcherAvatar)
+                .placeholder(R.drawable.avatart)
+                .into(holder.mCatcherAvatarImageView);
 
         UserInPhoto catchedUser = currentCarItem.getCatchedUserInPhoto();
 
@@ -180,7 +185,11 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<HomeRecyclerVi
             String catchedAvatar = catchedUser.getProfilePicture();
 
             holder.mCatchedUsernameTextView.setText(catchedUsername);
-            Glide.with(mContext).load(catchedAvatar).into(holder.mCatchedAvatarImageView);
+            GlideApp
+                    .with(mContext)
+                    .load(catchedAvatar)
+                    .placeholder(R.drawable.avatart)
+                    .into(holder.mCatchedAvatarImageView);
         }
 
         int likesCount = currentCar.getLikeCount();
